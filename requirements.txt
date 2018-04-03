@@ -1,0 +1,4 @@
+flask-wtf
+requests
+twilio
+pymongo

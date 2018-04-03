@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="container">
+    <div class="row header">
+        <div class="col-sm-9">
+
+        </div>
+        <div class="col-sm-3 pull-right">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 sidebar">
+            <div class="form-group">
+                <label for="phone"><i class="fa fa-calendar"></i> Enter Customer Phone Number</label>
+                <input type="text" id="phone" name="phone" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label><i class="fa fa-users"></i> Product Type</label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                        <input type="radio" name="productType" value="Lime" autocomplete="off" checked> Lime
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="productType" value="Cherry" autocomplete="off" checked> Cherry
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="productType" value="Vanilla" autocomplete="off"> Vanilla
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstName"><i class="fa fa-building"></i> Customer Name</label>
+                <input type="text" id="firstName" name="firstName" class="form-control"/>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-sm btn-info" id="sendSms">Send SMS</button>
+            </div>
+        </div>
+        <div class="col-sm-9 content">
+            <div class="message-box">
+                <span>First Automated Message</span>
+
+                <div class="highlight">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <textarea disabled name="firstMessage" id="firstMessage" rows="1">Hi &lt;firstName&gt;, I saw that your &lt;productType&gt; was delivered. How are you enjoying it so far?</textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="edit btn btn-sm btn-info" data-edit="firstMessage">Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-box">
+                <span>if Positive Response <i class="fa fa-lg fa-smile-o"></i></span>
+                <div class="highlight">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <textarea disabled name="positiveResponse" id="positiveResponse" rows="1">Great, can you describe what you love most about &lt;productType&gt;?</textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="edit btn btn-sm btn-info" data-edit="positiveResponse">Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-box">
+                <span>if Negative Response <i class="fa fa-lg fa-frown-o"></i></span>
+                <div class="highlight">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <textarea disabled name="negativeResponse" id="negativeResponse" rows="1">I'm sorry to hear that, what do you dislike about &lt;productType&gt;?</textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="edit btn btn-sm btn-info" data-edit="negativeResponse">Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
